@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>otp_check</title>
+</head>
+<body>
+<form method="POST" action="{% url 'otp_verification'%}">
+	{% csrf_token %}
+  <label for="otp">Enter OTP:</label><br>
+  <input type="text" id="otp" name="otp"><br>
+  <input type="submit" value="Verify OTP"/>
+</form>
+
+<br><br>
+<form method="GET" action="{% url 'home' %}/">
+  <input type="submit" value="Ask for another OTP"/>
+</form>
+
+<h1>ashish</h1>
+
+</body>
+</html>

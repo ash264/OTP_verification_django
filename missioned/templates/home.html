@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>otp_check</title>
+</head>
+<body>
+<form method="POST" action="{% url 'otp'%}">
+	{% csrf_token %}
+  <label for="phone_number">Phone Number:</label><br>
+  <input type="text" id="phone_number" name="phone_number"><br>
+  <input type="submit" />
+</form>
+
+<h1>ashish</h1>
+</body>
+</html>
