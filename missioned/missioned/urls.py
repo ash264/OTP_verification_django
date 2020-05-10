@@ -21,6 +21,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.home,name='home'),
     path('otp/',views.send_otp,name='otp'),
-    path('enter/',views.enter,name='enter'),
+    path('enter/<mobile>/',views.enter,name='enter'),
     path('otp_ver/',views.otp_verification,name='otp_verification'),
 ]

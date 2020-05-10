@@ -1,22 +1,26 @@
+{% load static %}
+
 <!DOCTYPE html>
-<html>
 <head>
-	<title>otp_check</title>
+  <title>OTP page</title>
+  <link rel="stylesheet" type="text/css" href="{% static 'otp_check/css/style.css' %}">
 </head>
 <body>
-<form method="POST" action="{% url 'otp_verification'%}">
-	{% csrf_token %}
-  <label for="otp">Enter OTP:</label><br>
-  <input type="text" id="otp" name="otp"><br>
-  <input type="submit" value="Verify OTP"/>
-</form>
+ <header> <img src="{% static 'otp_check/images/logo.jpeg' %}" alt="LOGO" width="250" height="100"></header>
+  <div class="bg">
+    <img class="message" src="{% static 'otp_check/images/message.svg' %}">
+    <p class="first" style="color: black"><b>Hi User!</b></p>
+    <p class="second" style="color: black">A One-Time-Password has been sent to {{mobile}}<b></p>
+    <p class="third" style="color: black">Please enter the OTP to verify your account.</p>
 
-<br><br>
-<form method="GET" action="{% url 'home' %}/">
-  <input type="submit" value="Ask for another OTP"/>
-</form>
+    <form method="POST" action="{% url 'otp_verification'%}">{% csrf_token %}
+	    <input class="fourth" required="required" placeholder="Enter the code" autofocus="autofocus" type="text" name="otp"><br><br>
+	    <button class="button" type="submit" value="Submit">Next</button><br><br><br>
+	</form>
 
-<h1>ashish</h1>
+    <a class="Link1" style="color: grey" href="{% url 'home' %}"><b>EDIT NUMBER</b></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
+    <a class="Link2" style="color: grey" href="{% url 'home' %}"><b>ASK FOR ANOTHER OTP</b></a>
+  </div>
 </body>
-</html>
+
